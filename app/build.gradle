@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.kanneki.happyshopping"
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "WEB_URL", "\"https://google.com/\"")
+        }
+        debug {
+            buildConfigField("String", "WEB_URL", "\"https://google.com/\"")
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+ext {
+    androidx_version = "1.4.0"
+    navigation_version = "2.3.5"
+    lifecycle_version = "2.2.0"
+    datastore_version = "1.0.0"
+    gson_version = "2.8.6"
+    okhttp_version = "4.9.2"
+    retrofit_version = "2.9.0"
+    retrofit_adapter_version = "0.2.0"
+    glide_version = "4.12.0"
+}
+
+dependencies {
+
+    //AndroidX
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation "androidx.fragment:fragment-ktx:$androidx_version"
+    implementation "androidx.activity:activity-ktx:$androidx_version"
+
+    //UI Layout
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+
+    //Test
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    testImplementation "com.google.truth:truth:1.1.3"
+
+    //Jetpack Navigation
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+
+    //Jetpack lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    //Jetpack DataStore
+    implementation "androidx.datastore:datastore-preferences:$datastore_version"
+    implementation  "androidx.datastore:datastore-core:$datastore_version"
+
+    //Gson
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    //Okhttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    testImplementation"com.squareup.okhttp3:mockwebserver:4.7.2"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation 'com.github.chenxyu:retrofit-adapter-flow:1.2.0'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    //FCM
+    implementation platform('com.google.firebase:firebase-bom:29.0.1')
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+}

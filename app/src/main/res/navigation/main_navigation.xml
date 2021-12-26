@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/webViewFragment">
+
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.kanneki.webview.presentation.ui.web.WebViewFragment"
+        android:label="WebViewFragment"
+        tool:layout="@layout/fragment_webview">
+        <action
+            android:id="@+id/action_webViewFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_stop"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_stop"/>
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kanneki.webview.presentation.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tool:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.kanneki.webview.presentation.ui.forgotpassword.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment"
+        tool:layout="@layout/fragment_forgot_password"/>
+</navigation>

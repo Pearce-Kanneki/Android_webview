@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "932734757955",
+    "project_id": "test-kanneki-shopping",
+    "storage_bucket": "test-kanneki-shopping.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932734757955:android:7bcf5bdb31c82e6d95f8f6",
+        "android_client_info": {
+          "package_name": "com.kanneki.happyshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932734757955-kh4ec0mloekc2spfj3ok748aeddqp8qf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkbYh-Z_NyoT0jTi6DGHdb52rSFoHgKO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932734757955-kh4ec0mloekc2spfj3ok748aeddqp8qf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
